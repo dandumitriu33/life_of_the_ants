@@ -2,6 +2,7 @@ package com.codecool.lifeoftheants;
 
 public class Soldier extends Insect {
     private String location;
+    private String enemyLocation;
     private String nextStep;
     private String[] normalSteps;
 
@@ -27,7 +28,7 @@ public class Soldier extends Insect {
                 }
             }
         } else {
-            String waspLocation = Wasp.getLocation();
+            String waspLocation = Map.getWaspLocation();
             String[] waspCoordinates = waspLocation.split(" ");
             String[] soldierCoordinates = this.location.split(" ");
             int waspX = Integer.parseInt(waspCoordinates[0]);
