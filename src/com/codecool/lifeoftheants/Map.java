@@ -5,8 +5,8 @@ public class Map {
     public static final int SIZE = 100;
     public static String waspLocation = "";
 
-    public String getWaspLocation() {
-        return this.waspLocation;
+    public static String getWaspLocation() {
+        return waspLocation;
     }
 
 

@@ -1,9 +1,10 @@
 package com.codecool.lifeoftheants;
 
 public class Queen extends Insect {
+    private static int mood;
     private String location;
     private String nextStep;
-    private int mood;
+
 
 
     public Queen(){
@@ -21,13 +22,14 @@ public class Queen extends Insect {
     @Override
     public void setLocation() {
         // not calling any method as the Queen does not move
+        if (mood > 0) mood--;
     }
 
-    public int getMood() {
-        return this.mood;
+    public static int getMood() {
+        return mood;
     }
 
-    public void setMood(int mood) {
-        this.mood = mood;
+    public static void setMood(int newMood) {
+        mood = newMood;
     }
 }

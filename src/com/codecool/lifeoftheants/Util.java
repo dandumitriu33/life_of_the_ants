@@ -11,4 +11,17 @@ public class Util {
         return arr[randomNumber];
     }
 
+    public static int randomNumberFromRange(int min, int max) {
+        Random r = new Random();
+        int randomNumber = r.nextInt((max - min) + 1) + min;
+        return randomNumber;
+    }
+
+    public static String getRandomEdge() {
+        String [] arr = {"100", "-100"};
+        Random r = new Random();
+        int randomNumber = r.nextInt(arr.length);
+        return arr[randomNumber];
+    }
+
 }
