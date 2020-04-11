@@ -23,6 +23,8 @@ public class Wasp extends Insect {
         // or keep to make this setLocation function default DRY
         setNextStep();
         this.location = this.nextStep;
+        String[] coordinates = this.location.split(" ");
+        Map.placeOnMap("W", Integer.parseInt(coordinates[0]), Integer.parseInt(coordinates[1]));
     }
 
 

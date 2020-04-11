@@ -40,6 +40,7 @@ public class Soldier extends Insect {
             if (waspX==soldierX && waspY==soldierY) {
                 System.out.println(this + " says: HAJIME");
                 Map.activityFrozen = false;
+
             }
             if (waspX >= soldierX && waspY >= soldierY) {
                 if (soldierX==waspX) nextX = soldierX;
@@ -67,6 +68,7 @@ public class Soldier extends Insect {
             }
         }
     }
+
 
     @Override
     public void setLocation() {

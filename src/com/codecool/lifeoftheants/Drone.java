@@ -65,7 +65,7 @@ public class Drone extends Insect {
             if (this.onHold==1) {
                 throwDrone();
             }
-            this.onHold--;
+            if (!Map.activityFrozen) this.onHold--;
 
         }
     }
