@@ -40,7 +40,7 @@ public class Soldier extends Insect {
             if (waspX==soldierX && waspY==soldierY) {
                 System.out.println(this + " says: HAJIME");
                 Map.activityFrozen = false;
-
+                this.normalSteps = buildNormalRoute(this.location);
             }
             if (waspX >= soldierX && waspY >= soldierY) {
                 if (soldierX==waspX) nextX = soldierX;
