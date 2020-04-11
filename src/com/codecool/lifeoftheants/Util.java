@@ -18,7 +18,7 @@ public class Util {
     }
 
     public static String getRandomEdge() {
-        String [] arr = {"100", "-100"};
+        String [] arr = {"0", "50"};
         Random r = new Random();
         int randomNumber = r.nextInt(arr.length);
         return arr[randomNumber];

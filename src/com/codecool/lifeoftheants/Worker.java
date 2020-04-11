@@ -36,5 +36,7 @@ public class Worker extends Insect {
     public void setLocation() {
         setNextStep();
         this.location = this.nextStep;
+        String[] coordinates = this.nextStep.split(" ");
+        Map.placeOnMap("w", Integer.parseInt(coordinates[0]), Integer.parseInt(coordinates[1]));
     }
 }

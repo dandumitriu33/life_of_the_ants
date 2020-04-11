@@ -25,9 +25,5 @@ public class Wasp extends Insect {
         this.location = this.nextStep;
     }
 
-    public String getLocation() {
-        return this.location;
-    }
-
 
 }

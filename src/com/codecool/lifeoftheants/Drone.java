@@ -32,7 +32,7 @@ public class Drone extends Insect {
                 else {
                     System.out.println(this + " says: HALLELUJAH");
                     this.onHold = 10;
-                    int newMood = Util.randomNumberFromRange(100, 200);
+                    int newMood = Util.randomNumberFromRange(50, 100);
                     Queen.setMood(newMood);
                 }
             }
@@ -69,11 +69,11 @@ public class Drone extends Insect {
         int horizontal = Integer.parseInt(Util.getRandomEdge());
         if (horizontal>0) {
             landingX = Integer.parseInt(Util.getRandomEdge());
-            landingY = Util.randomNumberFromRange(-100, 100);
+            landingY = Util.randomNumberFromRange(0, 25);
         }
         else {
             landingY = Integer.parseInt(Util.getRandomEdge());
-            landingX = Util.randomNumberFromRange(-100, 100);
+            landingX = Util.randomNumberFromRange(0, 25);
         }
         this.nextStep = landingX + " " + landingY;
     }
@@ -83,6 +83,8 @@ public class Drone extends Insect {
         if (onHold > 0) onHold--;
         setNextStep();
         this.location = this.nextStep;
+        String[] coordinates = this.nextStep.split(" ");
+        Map.placeOnMap("D", Integer.parseInt(coordinates[0]), Integer.parseInt(coordinates[1]));
 
     }
 }

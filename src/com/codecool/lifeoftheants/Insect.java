@@ -6,7 +6,7 @@ public abstract class Insect {
 
     public int stepsToQueen() {
         int result;
-        result = 100;
+        result = 25;
         //calculate steps to queen
         return result;
     }

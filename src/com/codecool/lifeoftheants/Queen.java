@@ -9,8 +9,8 @@ public class Queen extends Insect {
 
     public Queen(){
         super();
-        this.location = "0 0";
-        this.nextStep = "0 0";
+        this.location = "25 25";
+        this.nextStep = "25 25";
         this.mood = 0;
     }
 
@@ -22,6 +22,8 @@ public class Queen extends Insect {
     @Override
     public void setLocation() {
         // not calling any method as the Queen does not move
+        String[] coordinates = this.nextStep.split(" ");
+        Map.placeOnMap("Q", Integer.parseInt(coordinates[0]), Integer.parseInt(coordinates[1]));
         if (mood > 0) mood--;
     }
 

@@ -72,6 +72,8 @@ public class Soldier extends Insect {
     public void setLocation() {
         setNextStep();
         this.location = this.nextStep;
+        String[] coordinates = this.nextStep.split(" ");
+        Map.placeOnMap("S", Integer.parseInt(coordinates[0]), Integer.parseInt(coordinates[1]));
     }
 
     private String[] buildNormalRoute(String location) {
