@@ -2,7 +2,7 @@ package com.codecool.lifeoftheants;
 
 public class Drone extends Insect {
     private String location;
-    private String queenLocation = "0 0"; // change to modifiable?
+    private String queenLocation = "25 25"; // change to modifiable?
     private String nextStep;
     private int onHold = 0;
 
@@ -16,7 +16,6 @@ public class Drone extends Insect {
     @Override
     public void setNextStep() {
         if (!Map.activityFrozen || this.onHold == 0) {
-//            String queenLocation = ;
             String[] queenCoordinates = queenLocation.split(" ");
             String[] droneCoordinates = this.location.split(" ");
             int queenX = Integer.parseInt(queenCoordinates[0]);
@@ -32,7 +31,7 @@ public class Drone extends Insect {
                 else {
                     System.out.println(this + " says: HALLELUJAH");
                     this.onHold = 10;
-                    int newMood = Util.randomNumberFromRange(50, 100);
+                    int newMood = Util.randomNumberFromRange(25, 50);
                     Queen.setMood(newMood);
                 }
             }

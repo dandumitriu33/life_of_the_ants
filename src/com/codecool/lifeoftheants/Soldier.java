@@ -88,7 +88,7 @@ public class Soldier extends Insect {
             if (Math.abs(Integer.parseInt(coordinates[0]) + 1) > Map.SIZE) throw new ArithmeticException("Out of map.");
             result[2] = (Integer.parseInt(coordinates[0]) + 1) + " " + (Integer.parseInt(coordinates[1]) + 1);
             // move South
-            result[3] = (Integer.parseInt(coordinates[0]) + 1) + coordinates[1];
+            result[3] = (Integer.parseInt(coordinates[0]) + 1) + " " + coordinates[1];
             return result;
         }
         catch(ArithmeticException e) {

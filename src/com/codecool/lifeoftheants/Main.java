@@ -1,11 +1,12 @@
 package com.codecool.lifeoftheants;
 
+import java.util.Scanner;
+
 public class Main {
 
     public static void main(String[] args) {
 
         Map board = new Map();
-        board.drawMap();
 
         Queen queenBee = new Queen();
         queenBee.setLocation();
@@ -19,10 +20,29 @@ public class Main {
         Soldier soldierOne = new Soldier(20, 37);
         soldierOne.setLocation();
 
-
         board.drawMap();
 
 
+        int turn = 0;
+        Scanner in = new Scanner(System.in);
+        String s;
+        while (turn<50) {
+            System.out.println("\nEnter 1 for next turn, anything else to quit.");
+            s = in.nextLine();
+            if (s.equals("1")) {
+                droneOne.setLocation();
+                workerOne.setLocation();
+                soldierOne.setLocation();
+                board.drawMap();
+                turn++;
+            }
+            else {
+                turn = 50;
+            }
+        }
+
     }
+
+
 
 }
