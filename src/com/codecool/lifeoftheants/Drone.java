@@ -15,7 +15,7 @@ public class Drone extends Insect {
 
     @Override
     public void setNextStep() {
-        if (!Map.activityFrozen || this.onHold == 0) {
+        if (!Map.activityFrozen && this.onHold == 0) {
             String[] queenCoordinates = queenLocation.split(" ");
             String[] droneCoordinates = this.location.split(" ");
             int queenX = Integer.parseInt(queenCoordinates[0]);
@@ -27,10 +27,13 @@ public class Drone extends Insect {
             if (queenX == droneX && queenY == droneY) {
                 if (Queen.getMood() > 0) {
                     throwDrone();
+                    droneCoordinates = this.location.split(" ");
+                    droneX = Integer.parseInt(droneCoordinates[0]);
+                    droneY = Integer.parseInt(droneCoordinates[1]);
                 }
                 else {
                     System.out.println(this + " says: HALLELUJAH");
-                    this.onHold = 10;
+                    this.onHold = 3;  // changed from 10 - faster progress
                     int newMood = Util.randomNumberFromRange(25, 50);
                     Queen.setMood(newMood);
                 }
@@ -59,27 +62,35 @@ public class Drone extends Insect {
         }
         else {
             this.nextStep = this.location;
+            if (this.onHold==1) {
+                throwDrone();
+            }
+            this.onHold--;
+
         }
     }
 
     private void throwDrone() {
         int landingX;
         int landingY;
-        int horizontal = Integer.parseInt(Util.getRandomEdge());
+        int horizontal = Integer.parseInt(Util.getRandomDirection());
         if (horizontal>0) {
             landingX = Integer.parseInt(Util.getRandomEdge());
-            landingY = Util.randomNumberFromRange(0, 25);
+            landingY = Util.randomNumberFromRange(0, 49);
         }
         else {
             landingY = Integer.parseInt(Util.getRandomEdge());
-            landingX = Util.randomNumberFromRange(0, 25);
+            landingX = Util.randomNumberFromRange(0, 49);
         }
+        System.out.println("next step pre throw: " + this.nextStep);
         this.nextStep = landingX + " " + landingY;
+        this.location = landingX + " " + landingY;
+        System.out.println("drone thrown to: " + this.nextStep);
     }
 
     @Override
     public void setLocation() {
-        if (onHold > 0) onHold--;
+        System.out.println("hold: " + this.onHold + " not at: " + this.location + " next step: " + this.nextStep);
         setNextStep();
         this.location = this.nextStep;
         String[] coordinates = this.nextStep.split(" ");
