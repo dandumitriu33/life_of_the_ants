@@ -1,9 +1,8 @@
 package com.codecool.lifeoftheants;
 
 public class Soldier extends Insect {
-    private String location;
+
     private String enemyLocation;
-    private String nextStep;
     private String[] normalSteps;
 
     public Soldier(int xCoordinate, int yCoordinate) {

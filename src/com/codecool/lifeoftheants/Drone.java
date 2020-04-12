@@ -1,9 +1,7 @@
 package com.codecool.lifeoftheants;
 
 public class Drone extends Insect {
-    private String location;
-    private String queenLocation = "25 25"; // change to modifiable?
-    private String nextStep;
+
     private int onHold = 0;
 
     public Drone(int xCoordinate, int yCoordinate) {
@@ -16,7 +14,7 @@ public class Drone extends Insect {
     @Override
     public void setNextStep() {
         if (!Map.activityFrozen && this.onHold == 0) {
-            String[] queenCoordinates = queenLocation.split(" ");
+            String[] queenCoordinates = Map.getQueenLocation().split(" ");
             String[] droneCoordinates = this.location.split(" ");
             int queenX = Integer.parseInt(queenCoordinates[0]);
             int queenY = Integer.parseInt(queenCoordinates[1]);

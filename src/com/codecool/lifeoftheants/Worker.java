@@ -1,8 +1,6 @@
 package com.codecool.lifeoftheants;
 
 public class Worker extends Insect {
-    private String location;
-    private String nextStep;
 
     public Worker(int xCoordinate, int yCoordinate) {
         super();

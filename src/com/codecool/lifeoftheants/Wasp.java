@@ -1,8 +1,6 @@
 package com.codecool.lifeoftheants;
 
 public class Wasp extends Insect {
-    private String location;
-    private String nextStep;
 
     public Wasp(int coordinateX, int coordinateY){
         super();

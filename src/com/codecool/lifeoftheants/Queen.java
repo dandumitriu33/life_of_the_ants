@@ -2,16 +2,13 @@ package com.codecool.lifeoftheants;
 
 public class Queen extends Insect {
     private static int mood;
-    private String location;
-    private String nextStep;
-
-
 
     public Queen(){
         super();
-        this.location = "25 25";
-        this.nextStep = "25 25";
+        final String QUEEN_SPAWN = "25 25";
+        this.location = QUEEN_SPAWN;
         this.mood = 0;
+        Map.queenLocation = this.location;
     }
 
     @Override
@@ -21,8 +18,8 @@ public class Queen extends Insect {
 
     @Override
     public void setLocation() {
-        // not calling any method as the Queen does not move
-        String[] coordinates = this.nextStep.split(" ");
+        // not calling setNextStep() as the Queen does not move
+        String[] coordinates = this.location.split(" ");
         Map.placeOnMap("Q", Integer.parseInt(coordinates[0]), Integer.parseInt(coordinates[1]));
         if (mood > 0) mood--;
     }

@@ -6,6 +6,7 @@ public class Map {
     public static boolean activityFrozen = false;
     public static final int SIZE = 50;
     public static String waspLocation = "";
+    public static String queenLocation = "";
     public static String[][] map;
 
     public Map() {
@@ -19,6 +20,10 @@ public class Map {
 
     public static String getWaspLocation() {
         return waspLocation;
+    }
+
+    public static String getQueenLocation() {
+        return queenLocation;
     }
 
     public void drawMap() {
